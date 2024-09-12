@@ -16,6 +16,8 @@ def main() -> int:
                 return
         
         screen.fill("black")
+        
+        player.update(dt)
         player.draw(screen)
         
         # This line is what *actuallY* draws the screen; so needs to go after all draw calls.
