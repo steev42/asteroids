@@ -41,6 +41,11 @@ def main() -> int:
                 sys.exit()
         for item in drawable:
             item.draw(screen)
+        for shot in shots:
+            for asteroid in asteroids:
+                if asteroid.collides(shot):
+                    asteroid.kill()
+                    shot.kill()
         
         # This line is what *actuallY* draws the screen; so needs to go after all draw calls.
         pygame.display.flip()
